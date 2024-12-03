@@ -52,7 +52,10 @@ Sculptor::~Sculptor()
 
 void Sculptor::setColor(float _r, float _g, float _b, float _a)
 {
-
+    r = _r;
+    g = _g;
+    b = _b;
+    a = _a;
 }
 
 void Sculptor::putVoxel(int x, int y, int z)
