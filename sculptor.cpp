@@ -74,12 +74,24 @@ void Sculptor::cutVoxel(int x, int y, int z)
 
 void Sculptor::putBox(int x0, int x1, int y0, int y1, int z0, int z1)
 {
-
+    for (int i = x0; i <= x1; i++) {
+        for (int j = y0; j <= y1; j++) {
+            for (int k = z0; k <= z1; k++) {
+                putVoxel(i, j, k);
+            }
+        }
+    }
 }
 
 void Sculptor::cutBox(int x0, int x1, int y0, int y1, int z0, int z1)
 {
-
+    for (int i = x0; i <= x1; i++) {
+        for (int j = y0; j <= y1; j++) {
+            for (int k = z0; k <= z1; k++) {
+                cutVoxel(i, j, k);
+            }
+        }
+    }
 }
 
 void Sculptor::putSphere(int xcenter, int ycenter, int zcenter, int radius)
