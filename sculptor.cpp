@@ -40,10 +40,10 @@ Sculptor::~Sculptor()
     }
     delete[] v; // libera o primeiro ponteiro
 
+    // liberando variáveis com zero
     nx = 0;
     ny = 0;
     nz = 0;
-
     r = 0; 
     g = 0;
     b = 0;
