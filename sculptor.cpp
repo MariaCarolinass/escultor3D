@@ -1,4 +1,6 @@
 #include "sculptor.h"
+#include <iostream>
+#include <fstream>
 
 Sculptor::Sculptor(int _nx, int _ny, int _nz)
 {
@@ -116,5 +118,80 @@ void Sculptor::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int r
 
 void Sculptor::writeOFF(const char *filename)
 {
+    std::ofstream file(filename); // abre o arquivo para escrita
 
+    // verifica se o arquivo foi aberto corretamente
+    if(!file) {
+        std::cerr << "Erro ao abrir o arquivo " << filename << std::endl;
+        return;
+    }
+
+    // escreve o cabeçalho do formato .OFF
+    file << "OFF\n";
+
+    int sizeVoxel = 0;
+    float fix = 0.5;
+
+    for (int i = 0; i < nx; i++) {
+        for (int j = 0; j < ny; ++j) {
+            for (int k = 0; k < nz; ++k) {
+                if (v[i][j][k].show) {
+                    sizeVoxel++;
+                }
+            }
+        }
+    }
+
+    // Escreve número de vértices, faces, e arestas
+    file << sizeVoxel * 8 << " " << sizeVoxel * 6 << "0" << "\n";
+
+    // Escreve as coordenadas dos vértices
+    for (int i = 0; i < nx; i++) {
+        for (int j = 0; j < ny; ++j) {
+            for (int k = 0; k < nz; ++k) {
+                if (v[i][j][k].show) {
+                    file << i - fix << " " << j + fix << " " << k - fix << "\n"
+                          << i - fix << " " << j - fix << " " << k - fix << "\n"
+                          << i + fix << " " << j - fix << " " << k - fix << "\n"
+                          << i + fix << " " << j + fix << " " << k - fix << "\n"
+                          << i - fix << " " << j + fix << " " << k + fix << "\n"
+                          << i - fix << " " << j - fix << " " << k + fix << "\n"
+                          << i + fix << " " << j - fix << " " << k + fix << "\n"
+                          << i + fix << " " << j + fix << " " << k + fix << "\n";
+                }
+            }
+        }
+    }
+
+    sizeVoxel = 0;
+
+    // Escreve as especificações das faces
+    for (int i = 0; i < nx; i++) {
+        for (int j = 0; j < ny; ++j) {
+            for (int k = 0; k < nz; ++k) {
+                if (v[i][j][k].show) {
+                    int vertex = sizeVoxel * 8;
+
+                    float colR = v[i][j][k].r;
+                    float colG = v[i][j][k].g;
+                    float colB = v[i][j][k].b;
+                    float colA = v[i][j][k].a;
+
+                    file << "4 " << 0 + vertex << " " << 3 + vertex << " " << 2 + vertex << " " << 1 + vertex << " " << colR << " " << colG << " " << colB << " " << colA << "\n"
+                         << "4 " << 4 + vertex << " " << 5 + vertex << " " << 6 + vertex << " " << 7 + vertex << " " << colR << " " << colG << " " << colB << " " << colA << "\n"
+                         << "4 " << 0 + vertex << " " << 1 + vertex << " " << 5 + vertex << " " << 4 + vertex << " " << colR << " " << colG << " " << colB << " " << colA << "\n"
+                         << "4 " << 0 + vertex << " " << 4 + vertex << " " << 7 + vertex << " " << 3 + vertex << " " << colR << " " << colG << " " << colB << " " << colA << "\n"
+                         << "4 " << 7 + vertex << " " << 6 + vertex << " " << 2 + vertex << " " << 3 + vertex << " " << colR << " " << colG << " " << colB << " " << colA << "\n"
+                         << "4 " << 1 + vertex << " " << 2 + vertex << " " << 6 + vertex << " " << 5 + vertex << " " << colR << " " << colG << " " << colB << " " << colA << "\n";
+
+                    sizeVoxel++;
+                }
+            }
+        }
+    }
+
+    // Finaliza o arquivo
+    file.close();
+
+    std::cout << "Arquivo salvo com sucesso em " << filename << std::endl;
 }
