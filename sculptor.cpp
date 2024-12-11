@@ -103,8 +103,8 @@ void Sculptor::putSphere(int xcenter, int ycenter, int zcenter, int radius)
     for (int i = 0; i < nx; i++) {
         for (int j = 0; j < ny; j++) {
             for (int k = 0; k < nz; k++) {
-                float sphere = sqrt(pow(i - xcenter, 2) + pow(j - ycenter, 2) + pow(k - zcenter, 2));
-                if (sphere <= radius) {
+                float eq = sqrt(pow(i - xcenter, 2) + pow(j - ycenter, 2) + pow(k - zcenter, 2));
+                if (eq <= radius) {
                     putVoxel(i, j, k);
                 }
             }
@@ -117,8 +117,8 @@ void Sculptor::cutSphere(int xcenter, int ycenter, int zcenter, int radius)
     for (int i = 0; i < nx; i++) {
         for (int j = 0; j < ny; j++) {
             for (int k = 0; k < nz; k++) {
-                float sphere = sqrt(pow(i - xcenter, 2) + pow(j - ycenter, 2) + pow(k - zcenter, 2));
-                if (sphere <= radius) {
+                float eq = sqrt(pow(i - xcenter, 2) + pow(j - ycenter, 2) + pow(k - zcenter, 2));
+                if (eq <= radius) {
                     cutVoxel(i, j, k);
                 }
             }
@@ -128,7 +128,6 @@ void Sculptor::cutSphere(int xcenter, int ycenter, int zcenter, int radius)
 
 void Sculptor::putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz)
 {
-
 }
 
 void Sculptor::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz)
