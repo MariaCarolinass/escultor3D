@@ -143,7 +143,7 @@ void Sculptor::writeOFF(const char *filename)
     }
 
     // Escreve número de vértices, faces, e arestas
-    file << sizeVoxel * 8 << " " << sizeVoxel * 6 << "0" << "\n";
+    file << sizeVoxel * 8 << " " << sizeVoxel * 6 << " 0" << "\n";
 
     // Escreve as coordenadas dos vértices
     for (int i = 0; i < nx; i++) {
