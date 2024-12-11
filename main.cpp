@@ -1,11 +1,11 @@
 # include "sculptor.h"
 
-int main()
-{
-    Sculptor sculptor(6, 6, 6);
-    sculptor.setColor(255, 0, 0, 1.0);
-    sculptor.putVoxel(2, 3, 1);
-    sculptor.cutVoxel(2, 3, 1);
+int main() {
+    Sculptor trono(10, 10, 10);
+    trono.setColor(0, 0, 1.0, 1.0);
+    trono.putBox(0, 9, 0, 9, 0, 9);
+    trono.cutBox(1, 8, 1, 9, 1, 9);
+    trono.writeOFF("trono.off");
 
     return 0;
 }
