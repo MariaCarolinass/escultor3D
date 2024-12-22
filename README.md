@@ -2,7 +2,7 @@
 
 Programa interativo para criação de esculturas.
 
-## Instruções
+## Instruções de Desenvolvimento
 
 Prepare um programa interativo baseado nas biblioteca de programação visual Qt para utilizar a classe Sculptor para permitir que um usuário realize desenhos em uma espécie de Paint 3D.
 
@@ -26,7 +26,15 @@ Será exigido que seu programa realize as seguintes tarefas:
 
     O programa criado deverá ser hospedado no github e deverá ser provido um manual no arquivo README.md com instruções de compilação e uso do programa
 
-## Como usar
+O processo de desenvolvimento do projeto é dividido em 3 etapas:
+
+- **Parte 1)** Implementação da classe sculptor e seus métodos.
+
+- **Parte 2)** Aplicando conceitos de Programação Orientada a Objetos (POO) e criação da classe abstrata FiguraGeometrica.
+
+- **Parte 3)** Desenvolvimento visual da interface com QT e documentação do programa.
+
+## Como usar o Escultor 3D
 
 ## Autores
 
@@ -34,4 +42,4 @@ Será exigido que seu programa realize as seguintes tarefas:
 
 ## Links
 
-- https://agostinhobritojr.github.io/curso/progav-dca3303/escultor.html
+- [Projeto Escultor 3D - Agostinho Brito](https://agostinhobritojr.github.io/curso/progav-dca3303/escultor.html)
