@@ -34,6 +34,8 @@ O processo de desenvolvimento do projeto é dividido em 3 etapas:
 
 - **Parte 3)** Desenvolvimento visual da interface com QT e documentação do programa.
 
+_OBS.: Foi exigido que o projeto faça uso do conceito de ponteiros para a criação da matriz 3D._
+
 ## Como usar o Escultor 3D
 
 ## Autores
