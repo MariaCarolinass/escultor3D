@@ -18,7 +18,8 @@ add_executable(escultor3D main.cpp
     putsphere.h putsphere.cpp
     cutsphere.h cutsphere.cpp
     putellipsoid.h putellipsoid.cpp
-    cutellipsoid.h cutellipsoid.cpp)
+    cutellipsoid.h cutellipsoid.cpp
+    readfile.h readfile.cpp)
 
 include(GNUInstallDirs)
 install(TARGETS escultor3D
