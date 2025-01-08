@@ -1,7 +1,26 @@
-# include "sculptor.h"
+#include "sculptor.h"
+#include "readfile.h"
+#include <iostream>
+
+using namespace std;
 
 int main() {
-    Sculptor trono(10, 10, 10);
+    const int SIZE = 100;
+    char input[SIZE];
+
+    cout << "Digite o nome do arquivo: ";
+    cin.getline(input, SIZE);
+
+    if (input[0] == '\0') {
+        cout << "Erro: Nenhum nome foi digitado." << endl;
+    } else {
+        Sculptor *objSculptor(ReadFile(input).objSculptor);
+        objSculptor->writeVECT(input);
+        objSculptor->writeOFF(input);
+        cout << "Figura criada com sucesso!" << endl;
+    }
+
+    /*Sculptor trono(10, 10, 10);
     trono.setColor(0, 0, 1.0, 1.0);
     trono.putBox(0, 9, 0, 9, 0, 9);
     trono.cutBox(1, 8, 1, 9, 1, 9);
@@ -17,7 +36,7 @@ int main() {
     ellipsoid.setColor(128, 0, 128, 1.0);
     ellipsoid.putEllipsoid(10, 10, 10, 6, 4, 3);
     ellipsoid.cutEllipsoid(10, 10, 10, 3, 2, 2);
-    ellipsoid.writeOFF("elipsoide.off");
+    ellipsoid.writeOFF("elipsoide.off");*/
 
     return 0;
 }
