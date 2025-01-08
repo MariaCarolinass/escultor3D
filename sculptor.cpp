@@ -234,3 +234,8 @@ void Sculptor::writeOFF(const char *filename)
 
     std::cout << "Arquivo salvo com sucesso em " << filename << std::endl;
 }
+
+void Sculptor::writeVECT(const char *filename)
+{
+
+}
