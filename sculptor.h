@@ -48,9 +48,6 @@ class Sculptor
         
         // grava a escultura no formato OFF no arquivo filename
         void writeOFF(const char* filename);
-
-        // grava a escultura como vetor de FiguraGeometrica no arquivo filename
-        void writeVECT(const char* filename);
 };
 
 #endif // SCULPTOR_H
