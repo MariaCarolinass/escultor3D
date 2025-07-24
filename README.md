@@ -34,9 +34,9 @@ O processo de desenvolvimento do projeto é dividido em 3 etapas:
 
 - **Parte 3)** Desenvolvimento visual da interface com QT e documentação do programa.
 
-_OBS.: Foi exigido que o projeto faça uso do conceito de ponteiros para a criação da matriz 3D._
-
 ## Como usar o Escultor 3D
+
+Utilize o Geomview para visualizar os desenhos da pasta desenhos.
 
 ## Autores
 
@@ -44,4 +44,4 @@ _OBS.: Foi exigido que o projeto faça uso do conceito de ponteiros para a cria�
 
 ## Links
 
-- [Projeto Escultor 3D - Agostinho Brito](https://agostinhobritojr.github.io/curso/progav-dca3303/escultor.html)
+[Projeto Escultor 3D - Agostinho Brito](https://agostinhobritojr.github.io/curso/progav-dca3303/escultor.html)
